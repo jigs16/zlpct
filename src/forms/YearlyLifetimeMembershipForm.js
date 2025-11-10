@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 const YearlyLifetimeMembershipForm = () => {
-  // Current date for age calculation
-  const today = new Date('2025-11-10');
+  // Current date for age calculation - dynamic
+  const today = new Date();
+
+  // Ref for photo input to clear file on remove
+  const photoRef = useRef(null);
 
   // State for personal details
   const [personalDetails, setPersonalDetails] = useState({
@@ -117,9 +120,12 @@ const YearlyLifetimeMembershipForm = () => {
     setPersonalDetails(updated);
   };
 
-  // Remove photo
+  // Remove photo - clears state and input value
   const removePhoto = () => {
     setPersonalDetails({ ...personalDetails, photo: null, photoPreview: null });
+    if (photoRef.current) {
+      photoRef.current.value = '';
+    }
   };
 
   // Handlers for communication details
@@ -489,6 +495,7 @@ const YearlyLifetimeMembershipForm = () => {
               <input
                 type="file"
                 name="photo"
+                ref={photoRef}
                 onChange={handlePersonalChange}
                 accept="image/*"
                 style={{ ...inputStyle, padding: '4px' }}
