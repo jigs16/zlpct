@@ -59,7 +59,7 @@ const Header = ({ title = "ZLPCT", logoUrl }) => {
 
             <Nav.Link href="#">YUVA SANGATHAN</Nav.Link>
 
-            <Nav.Link href="#">CONTACT US</Nav.Link>
+            <Nav.Link href="YearlyLifetimeMembershipForm">CONTACT US</Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
