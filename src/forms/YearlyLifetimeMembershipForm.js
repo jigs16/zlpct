@@ -1,4 +1,7 @@
 import React, { useState, useRef } from 'react';
+import communication_logo from '../assets/communication.svg';
+import education_logo from '../assets/education.svg';
+import work_logo from '../assets/work.svg';
 
 const YearlyLifetimeMembershipForm = () => {
   // Current date for age calculation - dynamic
@@ -262,13 +265,6 @@ const YearlyLifetimeMembershipForm = () => {
     </svg>
   );
 
-  // Map pin
-  const MapPinIcon = () => (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#d32f2f" strokeWidth="1.5">
-      <circle cx="12" cy="10" r="7"></circle>
-      <path d="M12 22s8-4 8-10V5a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v3c0 6 8 12 8 12z"></path>
-    </svg>
-  );
 
   // Users icon for family
   const UsersIcon = () => (
@@ -535,7 +531,7 @@ const YearlyLifetimeMembershipForm = () => {
           {/* Occupation */}
           <div style={sectionStyle}>
             <h3 style={{ color: '#d32f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '16px', fontWeight: '500' }}>
-              <BriefcaseIcon /> Occupation Detail
+              <img src={work_logo} height={'30px'}></img> Occupation Detail
             </h3>
             <div style={{ marginBottom: '8px' }}>
               <label style={{ fontSize: '14px', fontWeight: '500', display: 'block', marginBottom: '2px' }}>Occupation</label>
@@ -599,7 +595,7 @@ const YearlyLifetimeMembershipForm = () => {
           {/* Education - after Occupation */}
           <div style={sectionStyle}>
             <h3 style={{ color: '#d32f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '16px', fontWeight: '500' }}>
-              <GraduationIcon /> Education Detail
+              <img src={education_logo} height={'30px'}></img> Education Detail
             </h3>
             <div style={{ marginBottom: '8px' }}>
               <label style={{ fontSize: '14px', fontWeight: '500', display: 'block', marginBottom: '2px' }}>Education Category</label>
@@ -630,7 +626,7 @@ const YearlyLifetimeMembershipForm = () => {
           {/* Communication - on right side */}
           <div style={sectionStyle}>
             <h3 style={{ color: '#d32f2f', marginBottom: '12px', display: 'flex', alignItems: 'center', gap: '6px', fontSize: '16px', fontWeight: '500' }}>
-              <MapPinIcon /> Communication Detail
+              <img src={communication_logo} height={'30px'}></img> Communication Detail
             </h3>
             <div style={{ marginBottom: '8px' }}>
               <label style={{ fontSize: '14px', fontWeight: '500', display: 'block', marginBottom: '2px' }}>Residential Address<span style={{color: '#d32f2f'}}>*</span></label>
