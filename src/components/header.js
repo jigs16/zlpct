@@ -21,7 +21,9 @@ const Header = ({ title = "ZLPCT", logoUrl }) => {
             style={{ height: "56px", marginRight: "10px" }}
           />
         </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        
         <Navbar.Collapse id="basic-navbar-nav" className="navbar__items--right">
           <Nav className="ms-auto">
             <Nav.Link href="./home">HOME</Nav.Link>
