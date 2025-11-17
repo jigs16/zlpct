@@ -47,8 +47,32 @@ const HomeScreen = () => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <div>
-        <img src='https://fastly.picsum.photos/id/76/4912/3264.jpg?hmac=VkFcSa2Rbv0R0ndYnz_FAmw02ON1pPVjuF_iVKbiiV8' style={{width:'100%',objectFit:'scale-down'}}></img>
+      <div className="slider-wrapper">
+        {slides.map((slide, index) => (
+          <div
+            key={index}
+            className={`slide ${index === currentIndex ? 'active' : ''}`}
+          >
+            <img src={slide.url} alt={slide.title} />
+          </div>
+        ))}
+      </div>
+
+      <button className="nav-arrow prev-arrow" onClick={prevSlide}>
+        &#8249; {/* Left chevron */}
+      </button>
+      <button className="nav-arrow next-arrow" onClick={nextSlide}>
+        &#8250; {/* Right chevron */}
+      </button>
+      
+      <div className="dots-container">
+        {slides.map((_, index) => (
+          <span
+            key={index}
+            className={`dot ${index === currentIndex ? 'active' : ''}`}
+            onClick={() => goToSlide(index)}
+          />
+        ))}
       </div>
     </div>
   );
